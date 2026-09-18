@@ -40,10 +40,12 @@ const simple_icons: IconSet[] = [
       appstore: "apps-outline.svg",
       book: "book-outline.svg",
       close: "close-outline.svg",
+      construct: "construct-outline.svg",
       download: "download-outline.svg",
       "ellipsis-vertical": "ellipsis-vertical-outline.svg",
       "file-tray-full": "file-tray-full-outline.svg",
       film: "film-outline.svg",
+      "game-controller": "game-controller-outline.svg",
       globe: "globe-outline.svg",
       heart: "heart-outline.svg",
       image: "image-outline.svg",
@@ -64,6 +66,7 @@ const simple_icons: IconSet[] = [
       search: "search-outline.svg",
       seeder: "swap-vertical.svg",
       settings: "settings-outline.svg",
+      star: "star-outline.svg",
       tv: "tv-outline.svg"
     },
     svgo_opts: sxng_icon_opts

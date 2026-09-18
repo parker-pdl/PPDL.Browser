@@ -1,0 +1,59 @@
+{% from 'simple/icons.html' import icon_big %}
+{#-
+  Parker Data Link app showcase.
+
+  Two category-style buttons that toggle a panel of our own apps.  Built on
+  <details>/<summary> so the toggle works without JavaScript.
+
+  Store links are placeholders until the listings go live; Samsung is shown
+  as plain text because there is nothing to link to yet.
+-#}
+{%- set app_sections = [
+  {
+    'id': 'net_tools',
+    'name': _('Net Tools'),
+    'icon': 'construct',
+    'apps': [
+      ('Privacy Picture', _('Strips hidden data from your photos before you share them.')),
+      ('Secret Vault', _('Locks away private files and notes behind a passcode.')),
+      ('Sub Tracker', _('Keeps tabs on your subscriptions so nothing renews by surprise.')),
+      ('Parker Weather', _('Simple, clean local forecasts with no clutter or ads.')),
+    ],
+  },
+  {
+    'id': 'games',
+    'name': _('Games'),
+    'icon': 'game-controller',
+    'apps': [
+      ('Necronomicon: Book of the Dead', _('Page through a cursed tome of dark tales and lore.')),
+      ('Classic Cartoons', _('Watch vintage animated shorts from the golden age.')),
+      ('Horror Movies Free: Classics', _('Stream classic horror features at no cost.')),
+      ('Classic Movies & TV', _('Old favourites from film and television, free to watch.')),
+    ],
+  },
+] -%}
+<div class="app_sections">{{- '' -}}
+  {%- for section in app_sections -%}
+  <details class="app_section" id="app_section_{{ section.id }}" name="pdl_app_section">{{- '' -}}
+    <summary class="app_section_button">{{- '' -}}
+      {{- icon_big(section.icon) -}}
+      <span class="app_section_name">{{- section.name -}}</span>{{- '' -}}
+    </summary>{{- '' -}}
+    <div class="app_section_panel">{{- '' -}}
+      <ul class="app_list">{{- '' -}}
+        {%- for app_name, app_description in section.apps -%}
+        <li class="app_card">{{- '' -}}
+          <p class="app_name">{{- app_name -}}</p>{{- '' -}}
+          <p class="app_description">{{- app_description -}}</p>{{- '' -}}
+          <p class="app_stores">{{- '' -}}
+            <a class="app_store_link" href="#">{{- _('Google Play') -}}</a>{{- '' -}}
+            <a class="app_store_link" href="#">{{- _('Amazon') -}}</a>{{- '' -}}
+            <span class="app_store_link app_store_soon">{{- _('Samsung (soon)') -}}</span>{{- '' -}}
+          </p>{{- '' -}}
+        </li>{{- '' -}}
+        {%- endfor -%}
+      </ul>{{- '' -}}
+    </div>{{- '' -}}
+  </details>{{- '' -}}
+  {%- endfor -%}
+</div>
