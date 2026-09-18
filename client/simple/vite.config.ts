@@ -21,8 +21,7 @@ const PATH = {
   brand: "src/brand/",
   dist: resolve(ROOT, "searx/static/themes/simple/"),
   modules: "node_modules/",
-  src: "src/",
-  templates: resolve(ROOT, "searx/templates/simple/")
+  src: "src/"
 } as const;
 
 const svg2svg_opts: Config = {
@@ -179,17 +178,6 @@ export default {
         }
       ],
       svg2svg_favicon_opts
-    ),
-
-    // -- simple templates
-    plg_svg2svg(
-      [
-        {
-          src: `${PATH.brand}/searxng-wordmark.svg`,
-          dest: `${PATH.templates}/searxng-wordmark.min.svg`
-        }
-      ],
-      svg2svg_opts
     )
   ], // end: plugins
 
